@@ -3,7 +3,8 @@ from PIL import Image
 import pytesseract
 
 # Link to Tesseract
-pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+# pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+pytesseract.pytesseract.tesseract_cmd = "/usr/bin/tesseract"
 
 # Title of the app
 st.title("📷 Math Problem OCR")
@@ -20,3 +21,4 @@ if uploaded_image:
         text = pytesseract.image_to_string(img, config='--psm 6')
         st.subheader("📝 Extracted Math Problem")
         st.code(text)
+
